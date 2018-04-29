@@ -1306,8 +1306,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -41,
-      "y": -239
+      "x": -48,
+      "y": -267
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1406,7 +1406,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": -45,
-      "y": -230
+      "y": -264
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1472,7 +1472,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 850,
+      "width": 777,
       "height": 400
     },
     "_rotationX": 0,
@@ -1481,8 +1481,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -15,
-      "y": 40
+      "x": -8,
+      "y": -8
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1500,8 +1500,8 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_actualFontSize": 50,
-    "_fontSize": 50,
+    "_actualFontSize": 40,
+    "_fontSize": 40,
     "_lineHeight": 50,
     "_enableWrapText": true,
     "_N$file": {
@@ -1509,7 +1509,7 @@
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
-    "_N$string": "\nver 1.0.1      游戏规则：\n控制方法：WASD，上下左右，\n鼠标移动至方位块，触摸屏触摸方位块\n允许出界，蛇从另一端进入\n蛇撞断自己断掉的部分会形成墙\n蛇撞墙后游戏结束\n电脑端按空格可以暂停",
+    "_N$string": "ver 1.0.2      游戏规则：\n1. 手机需要横屏 用键盘前请先点击游戏界面\n2. 控制方法：WASD，上下左右，\n3. 鼠标移动至方位块，触摸屏触摸方位块\n4. 允许出界，蛇从另一端进入\n5. 蛇撞断自己断掉的部分会形成墙\n6. 蛇撞墙后游戏结束\n7. 电脑端按空格可以暂停",
     "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
