@@ -127,6 +127,7 @@ cc.Class({
             }
         }
     },
+
     mouse () {
         this.up.on('mouseenter', function (event) {
             if (this.check(Direction.up, this.dir)) {
