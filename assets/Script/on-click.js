@@ -24,6 +24,10 @@ cc.Class({
             type: cc.Node,
             default: null,
         },
+        pre: {
+            type: cc.Node,
+            default: null,
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -44,6 +48,7 @@ cc.Class({
         this.main.active = true;
         this.note.active = true;
         this.mover.active = true;
+        this.pre.active = false;
         this.node.destroy();
     },
 
