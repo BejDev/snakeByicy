@@ -65,6 +65,7 @@ cc.Class({
     },
 
     upd () {
+    	// cc.log(this.scoreString.string, this.wallString.string);
     	if(this.ongoing == false){
     		return;
     	}
@@ -149,6 +150,26 @@ cc.Class({
                 this.dir_checking = Direction.right;
             }
         }, this);
+        this.up.on('touchstart', function (event) {
+            if (this.check(Direction.up, this.dir)) {
+                this.dir_checking = Direction.up;
+            }
+        }, this);
+        this.down.on('touchstart', function (event) {
+            if (this.check(Direction.down, this.dir)) {
+                this.dir_checking = Direction.down;
+            }
+        }, this);
+        this.left.on('touchstart', function (event) {
+            if (this.check(Direction.left, this.dir)) {
+                this.dir_checking = Direction.left;
+            }
+        }, this);
+        this.right.on('touchstart', function (event) {
+            if (this.check(Direction.right, this.dir)) {
+                this.dir_checking = Direction.right;
+            }
+        }, this);
     },
 
     addWall (x,y) {
@@ -189,22 +210,22 @@ cc.Class({
     },
 
     onKeyDown (event) {
-        if (event.keyCode == cc.KEY.up) {
+        if (event.keyCode == cc.KEY.up || event.keyCode == cc.KEY.w) {
             if (this.check(Direction.up, this.dir)) {
                 this.dir_checking = Direction.up;
             }
         }
-        else if (event.keyCode == cc.KEY.left) {
+        else if (event.keyCode == cc.KEY.left || event.keyCode == cc.KEY.a) {
             if (this.check(Direction.left, this.dir)) {
                 this.dir_checking = Direction.left;
             }
         }
-        else if (event.keyCode == cc.KEY.down) {
+        else if (event.keyCode == cc.KEY.down || event.keyCode == cc.KEY.s) {
             if (this.check(Direction.down, this.dir)) {
                 this.dir_checking = Direction.down;
             }
         }
-        else if (event.keyCode == cc.KEY.right) {
+        else if (event.keyCode == cc.KEY.right || event.keyCode == cc.KEY.d) {
             if (this.check(Direction.right, this.dir)) {
                 this.dir_checking = Direction.right;
             }
