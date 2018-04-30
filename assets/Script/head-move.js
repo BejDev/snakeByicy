@@ -57,10 +57,6 @@ cc.Class({
         for (var i = 1; i <= this.bodysize; i++){
             this.plusLength(this.node.x, this.node.y);
         }
-        for (var i in this.bodyList) {
-            if (i == 0) { this.bodyList[i].init(this); }
-            else { this.bodyList[i].init(this.bodyList[i-1]); }
-        }
         this.schedule(this.upd, this.timeBlock);
     },
 
@@ -182,6 +178,12 @@ cc.Class({
         this.wallList.push(nodes.getComponent('wall'));
     },
 
+    killmover() {
+    	this.up.active = false;
+    	this.down.active = false;
+    	this.left.active = false;
+    	this.right.active = false;
+    },
 
     gameover () {
         for(var i in this.bodyList){
@@ -204,28 +206,37 @@ cc.Class({
         nodes = cc.instantiate(this.body);
         nodes.parent = scene;
         nodes.setPosition(x,y);
-        nodes.getComponent('body-follow').target = this.bodyList[this.bodyList.length-1];
+        if(this.bodyList.length == 0){
+        	nodes.getComponent('body-follow').target = this;
+        }
+        else {
+        	nodes.getComponent('body-follow').target = this.bodyList[this.bodyList.length-1];
+        }
         nodes.getComponent('body-follow').prePos = nodes.getPosition();
         this.bodyList.push(nodes.getComponent('body-follow'));
     },
 
     onKeyDown (event) {
         if (event.keyCode == cc.KEY.up || event.keyCode == cc.KEY.w) {
+        	this.killmover();
             if (this.check(Direction.up, this.dir)) {
                 this.dir_checking = Direction.up;
             }
         }
         else if (event.keyCode == cc.KEY.left || event.keyCode == cc.KEY.a) {
+        	this.killmover();
             if (this.check(Direction.left, this.dir)) {
                 this.dir_checking = Direction.left;
             }
         }
         else if (event.keyCode == cc.KEY.down || event.keyCode == cc.KEY.s) {
+        	this.killmover();
             if (this.check(Direction.down, this.dir)) {
                 this.dir_checking = Direction.down;
             }
         }
         else if (event.keyCode == cc.KEY.right || event.keyCode == cc.KEY.d) {
+        	this.killmover();
             if (this.check(Direction.right, this.dir)) {
                 this.dir_checking = Direction.right;
             }
