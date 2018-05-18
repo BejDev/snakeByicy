@@ -71,7 +71,8 @@ cc.Class({
         this.wallString.string =  'Walls: ' + this.wallSum.toString();
         this.dir = this.dir_checking;
         this.prePos = this.node.getPosition();
-
+        this.timeBlock = 0.2 - this.score * 0.005;
+        cc.log(this.timeBlock);
         if (this.dir == Direction.up) {
             this.node.y += this.dist;
         }
